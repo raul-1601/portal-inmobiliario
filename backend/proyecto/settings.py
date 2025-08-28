@@ -15,6 +15,7 @@ import os
 from dotenv import load_dotenv
 
 
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,6 +33,8 @@ DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
+
+AUTH_USER_MODEL = 'auth.user'
 
 CSRF_TRUSTED_ORIGINS = [
 "https://localhost:8000"
@@ -92,6 +95,8 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
+
 
 
 # Password validation
