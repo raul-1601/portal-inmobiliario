@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Regiones</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f0f0f0; margin: 5px 0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Regiones</h1>
+
+    {% if regiones %}
+        <ul>
+            {% for region in regiones %}
+                <li>
+                    <span style="display: inline-block; width: 50px; text-align: right;">{{ region.nro_region }}</span>
+                    <span style="margin-left: 10px;">— {{ region.nombre }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay regiones registradas.</p>
+    {% endif %}
+
+</body>
+</html>
