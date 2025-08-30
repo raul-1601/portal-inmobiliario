@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <p>¿Estás seguro de eliminar el inmueble "{{ object.nombre }}"?</p>
+    <input type="submit" value="Eliminar">
+    <a href="{% url 'inmueble_list' %}">Cancelar</a>
+</form>

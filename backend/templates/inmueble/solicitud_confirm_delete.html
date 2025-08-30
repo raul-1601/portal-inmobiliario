@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <p>¿Estás seguro de eliminar la solicitud "{{ object.mensaje }}"?</p>
+    <input type="submit" value="Eliminar">
+    <a href="{% url 'solicitud_list' %}">Cancelar</a>
+</form>

@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <p>¿Estás seguro de eliminar la comuna "{{ object.nombre }}"?</p>
+    <input type="submit" value="Eliminar">
+    <a href="{% url 'comuna_list' %}">Cancelar</a>
+</form>

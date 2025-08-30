@@ -7,7 +7,27 @@
         body { font-family: Arial, sans-serif; margin: 40px; }
         h1 { color: #333; }
         ul { list-style-type: none; padding: 0; }
-        li { background: #f0f0f0; margin: 5px 0; padding: 10px; border-radius: 5px; }
+        li { 
+            background: #f0f0f0; 
+            margin: 5px 0; 
+            padding: 10px; 
+            border-radius: 5px; 
+            display: grid; 
+            grid-template-columns: 40px 60px auto 100px; 
+            gap: 10px;
+            align-items: center;
+        }
+        .btn-editar {
+            background-color: #2196F3;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-editar:hover {
+            background-color: #1976D2;
+        }
     </style>
 </head>
 <body>
@@ -17,14 +37,20 @@
         <ul>
             {% for region in regiones %}
                 <li>
-                    <span style="display: inline-block; width: 50px; text-align: right;">{{ region.nro_region }}</span>
-                    <span style="margin-left: 10px;">— {{ region.nombre }}</span>
+                    <span style="text-align: right; color: gray;">{{ region.id }}</span>
+                    <span style="text-align: right;">{{ region.nro_region }}</span>
+                    <span>— {{ region.nombre }}</span>
+                    <a href="{% url 'region_update' region.pk %}" class="btn-editar">Editar</a>
                 </li>
             {% endfor %}
         </ul>
     {% else %}
         <p>No hay regiones registradas.</p>
     {% endif %}
+
+    <div>
+        <a href="{% url 'region_create' %}" class="btn-editar">Crear Region</a>
+    </div>
 
 </body>
 </html>
